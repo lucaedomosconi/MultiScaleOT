@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_auto_examples:
-
 Examples
 ==================
 
@@ -14,13 +10,96 @@ A convenient way to try them is via :ref:`Google colab <installation-google-cola
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates on a simple 1-dimensional example the basic usage of the TMultiScaleS...">
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates on a simple 1-dimensional example the basic usage of the TMultiScaleSetupGrid class for representing a point cloud with a measure on multiple resolution levels and how to use the SparseSinkhorn solver.">
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_0010_multiscale-setup_thumb.png
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_0010_multiscale-setup_thumb.png
+    :alt:
 
-     :ref:`sphx_glr_auto_examples_plot_0010_multiscale-setup.py`
+  :ref:`sphx_glr_auto_examples_plot_0010_multiscale-setup.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">1d Sparse Sinkhorn</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example computes the optimal transport between two simple 2-dimensional images and then generates a simple approximation of the displacement interpolation">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_0011_2d-image-interpolation_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_plot_0011_2d-image-interpolation.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">2d Image Interpolation</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Compute optimal transport between two point clouds in 3d, then compute displacement interpolation and rasterize a 2d projection of it to an image">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_0015_3d-pointclouds_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_plot_0015_3d-pointclouds.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">3d Point clouds</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates on a simple 1-dimensional example the basic usage of the TSinkhornSolverBarycenter class for computing a Wasserstein barycenter with entropic regularization.">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_0020_1d-barycenter_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_plot_0020_1d-barycenter.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">1d Barycenter with Sinkhorn</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example computes the Hellinger--Kantorovich unbalanced optimal transport between two simple 2-dimensional images and then generates a simple approximation of the displacement interpolation">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_0012_2d-HK-interpolation_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_plot_0012_2d-HK-interpolation.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">2d Image Interpolation: Hellinger--Kantorovich distance</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 
@@ -31,107 +110,23 @@ A convenient way to try them is via :ref:`Google colab <installation-google-cola
    :hidden:
 
    /auto_examples/plot_0010_multiscale-setup
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example computes the optimal transport between two simple 2-dimensional images and then ge...">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_0011_2d-image-interpolation_thumb.png
-
-     :ref:`sphx_glr_auto_examples_plot_0011_2d-image-interpolation.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /auto_examples/plot_0011_2d-image-interpolation
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Compute optimal transport between two point clouds in 3d, then compute displacement interpolati...">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_0015_3d-pointclouds_thumb.png
-
-     :ref:`sphx_glr_auto_examples_plot_0015_3d-pointclouds.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /auto_examples/plot_0015_3d-pointclouds
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates on a simple 1-dimensional example the basic usage of the TSinkhornSol...">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_0020_1d-barycenter_thumb.png
-
-     :ref:`sphx_glr_auto_examples_plot_0020_1d-barycenter.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /auto_examples/plot_0020_1d-barycenter
+   /auto_examples/plot_0012_2d-HK-interpolation
 
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example computes the Hellinger--Kantorovich unbalanced optimal transport between two simpl...">
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_0012_2d-HK-interpolation_thumb.png
+  .. container:: sphx-glr-footer sphx-glr-footer-gallery
 
-     :ref:`sphx_glr_auto_examples_plot_0012_2d-HK-interpolation.py`
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-.. raw:: html
+      :download:`Download all examples in Python source code: auto_examples_python.zip </auto_examples/auto_examples_python.zip>`
 
-    </div>
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/plot_0012_2d-HK-interpolation
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-gallery
-
-
-  .. container:: sphx-glr-download
-
-    :download:`Download all examples in Python source code: auto_examples_python.zip <//media/daten/Research/Code/OTToolbox/OTToolbox_v0.2.0/docs/source/auto_examples/auto_examples_python.zip>`
-
-
-
-  .. container:: sphx-glr-download
-
-    :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip <//media/daten/Research/Code/OTToolbox/OTToolbox_v0.2.0/docs/source/auto_examples/auto_examples_jupyter.zip>`
+      :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip </auto_examples/auto_examples_jupyter.zip>`
 
 
 .. only:: html

@@ -1,87 +1,54 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Barycenters &mdash; MultiScaleOT 0.3.0 documentation</title>
-  
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+      <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=e259d695"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Periphery functions and classes" href="reference_periphery.html" />
     <link rel="prev" title="Sinkorn solver (unbalanced)" href="reference_solver_unbalanced.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="index.html" class="icon icon-home"> MultiScaleOT
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            MultiScaleOT
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
@@ -92,87 +59,82 @@
 <li class="toctree-l2"><a class="reference internal" href="reference_solver_aux.html">Auxillary objects for Sinkhorn solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_solver_standard.html">Sinkorn solver (standard)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_solver_unbalanced.html">Sinkorn solver (unbalanced)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Barycenters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Barycenters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer"><code class="docutils literal notranslate"><span class="pre">TMultiScaleSetupBarycenterContainer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.__init__"><code class="docutils literal notranslate"><span class="pre">TMultiScaleSetupBarycenterContainer.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.getAlpha"><code class="docutils literal notranslate"><span class="pre">TMultiScaleSetupBarycenterContainer.getAlpha()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.getBeta"><code class="docutils literal notranslate"><span class="pre">TMultiScaleSetupBarycenterContainer.getBeta()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setAlpha"><code class="docutils literal notranslate"><span class="pre">TMultiScaleSetupBarycenterContainer.setAlpha()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setBeta"><code class="docutils literal notranslate"><span class="pre">TMultiScaleSetupBarycenterContainer.setBeta()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setCenterMarginal"><code class="docutils literal notranslate"><span class="pre">TMultiScaleSetupBarycenterContainer.setCenterMarginal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setCostFunctionProvider"><code class="docutils literal notranslate"><span class="pre">TMultiScaleSetupBarycenterContainer.setCostFunctionProvider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setMarginal"><code class="docutils literal notranslate"><span class="pre">TMultiScaleSetupBarycenterContainer.setMarginal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setupDuals"><code class="docutils literal notranslate"><span class="pre">TMultiScaleSetupBarycenterContainer.setupDuals()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter.__init__"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter.findKernelLine"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter.findKernelLine()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter.getCostFunctionProvider"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter.getCostFunctionProvider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernel"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter.getKernel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernelCSRData"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter.getKernelCSRData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernelCSRDataTuple"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter.getKernelCSRDataTuple()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernelPosData"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter.getKernelPosData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernelPosDataTuple"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter.getKernelPosDataTuple()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter.getMarginalX"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter.getMarginalX()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter.getMarginalY"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter.getMarginalY()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter.getU"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter.getU()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter.getV"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenter.getV()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenterKLMarginals"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenterKLMarginals</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenterKLMarginals.__init__"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenterKLMarginals.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenterKLMarginals.getScorePrimal"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBarycenterKLMarginals.getScorePrimal()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="reference_periphery.html">Periphery functions and classes</a></li>
 </ul>
 </li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">MultiScaleOT</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="reference.html">Module reference</a> &raquo;</li>
-        
-      <li>Barycenters</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Module reference</a></li>
+      <li class="breadcrumb-item active">Barycenters</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/reference_solver_barycenter.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="barycenters">
-<h1>Barycenters<a class="headerlink" href="#barycenters" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="barycenters">
+<h1>Barycenters<a class="headerlink" href="#barycenters" title="Link to this heading"></a></h1>
 <p>Implementations for optimal transport barycenters are still particularly experimental.
 They work in principle but they do not yet provide mathematically sound sub-optimality control for truncation.
 Also the setup of such problems is considerably more complex.</p>
-<dl class="class">
-<dt id="MultiScaleOT.TMultiScaleSetupBarycenterContainer">
-<em class="property">class </em><code class="sig-prename descclassname">MultiScaleOT.</code><code class="sig-name descname">TMultiScaleSetupBarycenterContainer</code><a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.__init__" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="MultiScaleOT.TMultiScaleSetupBarycenterContainer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MultiScaleOT.</span></span><span class="sig-name descname"><span class="pre">TMultiScaleSetupBarycenterContainer</span></span><a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer" title="Link to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.__init__" title="Link to this definition"></a></dt>
 <dd><p>Overloaded function.</p>
 <ol class="arabic simple">
 <li><p>__init__(self: MultiScaleOT.TMultiScaleSetupBarycenterContainer) -&gt; None</p></li>
@@ -180,22 +142,22 @@ Also the setup of such problems is considerably more complex.</p>
 </ol>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.getAlpha">
-<code class="sig-name descname">getAlpha</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TMultiScaleSetupBarycenterContainer</em>, <em class="sig-param">nMarginal: int</em>, <em class="sig-param">nLayer: int</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[numpy.float64]<a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.getAlpha" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.getAlpha">
+<span class="sig-name descname"><span class="pre">getAlpha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer" title="MultiScaleOT.TMultiScaleSetupBarycenterContainer"><span class="pre">MultiScaleOT.TMultiScaleSetupBarycenterContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nMarginal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLayer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.getAlpha" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.getBeta">
-<code class="sig-name descname">getBeta</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TMultiScaleSetupBarycenterContainer</em>, <em class="sig-param">nMarginal: int</em>, <em class="sig-param">nLayer: int</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[numpy.float64]<a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.getBeta" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.getBeta">
+<span class="sig-name descname"><span class="pre">getBeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer" title="MultiScaleOT.TMultiScaleSetupBarycenterContainer"><span class="pre">MultiScaleOT.TMultiScaleSetupBarycenterContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nMarginal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLayer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.getBeta" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.setAlpha">
-<code class="sig-name descname">setAlpha</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TMultiScaleSetupBarycenterContainer, alpha: numpy.ndarray[numpy.float64], nMarginal: int, nLayer: int</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setAlpha" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.setAlpha">
+<span class="sig-name descname"><span class="pre">setAlpha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer" title="MultiScaleOT.TMultiScaleSetupBarycenterContainer"><span class="pre">MultiScaleOT.TMultiScaleSetupBarycenterContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nMarginal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLayer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setAlpha" title="Link to this definition"></a></dt>
 <dd><p>Set dual variable alpha of marginal nMarginal at layer nLayer to alpha and then propagates values to all coarser layers by maximization over child nodes.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>alpha</strong> – 1d double array with new values for dual variable. Size needs to equal number of cells in that layer.</p></li>
 <li><p><strong>nMarginal</strong> – id of marginal on which dual variable is to be set.</p></li>
@@ -205,12 +167,12 @@ Also the setup of such problems is considerably more complex.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.setBeta">
-<code class="sig-name descname">setBeta</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TMultiScaleSetupBarycenterContainer, beta: numpy.ndarray[numpy.float64], nMarginal: int, nLayer: int</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setBeta" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.setBeta">
+<span class="sig-name descname"><span class="pre">setBeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer" title="MultiScaleOT.TMultiScaleSetupBarycenterContainer"><span class="pre">MultiScaleOT.TMultiScaleSetupBarycenterContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nMarginal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nLayer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setBeta" title="Link to this definition"></a></dt>
 <dd><p>Set dual variable beta of marginal nMarginal at layer nLayer to beta and then propagates values to all coarser layers by maximization over child nodes.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>beta</strong> – 1d double array with new values for dual variable. Size needs to equal number of cells in that layer.</p></li>
 <li><p><strong>nMarginal</strong> – id of marginal on which dual variable is to be set.</p></li>
@@ -220,44 +182,44 @@ Also the setup of such problems is considerably more complex.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.setCenterMarginal">
-<code class="sig-name descname">setCenterMarginal</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TMultiScaleSetupBarycenterContainer</em>, <em class="sig-param">arg0: MultiScaleOT.TMultiScaleSetup</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setCenterMarginal" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.setCenterMarginal">
+<span class="sig-name descname"><span class="pre">setCenterMarginal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer" title="MultiScaleOT.TMultiScaleSetupBarycenterContainer"><span class="pre">MultiScaleOT.TMultiScaleSetupBarycenterContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="reference_multiscale.html#MultiScaleOT.TMultiScaleSetup" title="MultiScaleOT.TMultiScaleSetup"><span class="pre">MultiScaleOT.TMultiScaleSetup</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setCenterMarginal" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.setCostFunctionProvider">
-<code class="sig-name descname">setCostFunctionProvider</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TMultiScaleSetupBarycenterContainer</em>, <em class="sig-param">nMarginal: int</em>, <em class="sig-param">costFunctionProvider: THierarchicalCostFunctionProvider</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setCostFunctionProvider" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.setCostFunctionProvider">
+<span class="sig-name descname"><span class="pre">setCostFunctionProvider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer" title="MultiScaleOT.TMultiScaleSetupBarycenterContainer"><span class="pre">MultiScaleOT.TMultiScaleSetupBarycenterContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nMarginal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">costFunctionProvider</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="reference_solver_aux.html#MultiScaleOT.THierarchicalCostFunctionProvider" title="MultiScaleOT.THierarchicalCostFunctionProvider"><span class="pre">THierarchicalCostFunctionProvider</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setCostFunctionProvider" title="Link to this definition"></a></dt>
 <dd><p>Set nMarginal-th cost function in barycenter problem to costFunctionProvider.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.setMarginal">
-<code class="sig-name descname">setMarginal</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TMultiScaleSetupBarycenterContainer</em>, <em class="sig-param">nMarginal: int</em>, <em class="sig-param">MultiScaleSetup: MultiScaleOT.TMultiScaleSetup</em>, <em class="sig-param">weight: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setMarginal" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.setMarginal">
+<span class="sig-name descname"><span class="pre">setMarginal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer" title="MultiScaleOT.TMultiScaleSetupBarycenterContainer"><span class="pre">MultiScaleOT.TMultiScaleSetupBarycenterContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nMarginal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MultiScaleSetup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="reference_multiscale.html#MultiScaleOT.TMultiScaleSetup" title="MultiScaleOT.TMultiScaleSetup"><span class="pre">MultiScaleOT.TMultiScaleSetup</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setMarginal" title="Link to this definition"></a></dt>
 <dd><p>Set nMarginal-th marginal in barycenter problem to MultiScaleSetup with weight-coefficient weight.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.setupDuals">
-<code class="sig-name descname">setupDuals</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TMultiScaleSetupBarycenterContainer</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setupDuals" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TMultiScaleSetupBarycenterContainer.setupDuals">
+<span class="sig-name descname"><span class="pre">setupDuals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer" title="MultiScaleOT.TMultiScaleSetupBarycenterContainer"><span class="pre">MultiScaleOT.TMultiScaleSetupBarycenterContainer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TMultiScaleSetupBarycenterContainer.setupDuals" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter">
-<em class="property">class </em><code class="sig-prename descclassname">MultiScaleOT.</code><code class="sig-name descname">TSinkhornSolverBarycenter</code><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MultiScaleOT.</span></span><span class="sig-name descname"><span class="pre">TSinkhornSolverBarycenter</span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="Link to this definition"></a></dt>
 <dd><p>Solver for optimal transport barycenter.</p>
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenter</em>, <em class="sig-param">epsScalingHandler: MultiScaleOT.TEpsScalingHandler</em>, <em class="sig-param">layerCoarsest: int</em>, <em class="sig-param">layerFinest: int</em>, <em class="sig-param">errorGoal: float</em>, <em class="sig-param">MultiScaleSetupBarycenterContainer: MultiScaleOT.TMultiScaleSetupBarycenterContainer</em>, <em class="sig-param">cfg: MultiScaleOT.TSinkhornSolverParameters = &lt;MultiScaleOT.TSinkhornSolverParameters object at 0x7fbef12d78b0&gt;</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.__init__" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">MultiScaleOT.TSinkhornSolverBarycenter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsScalingHandler:</span> <span class="pre">MultiScaleOT.TEpsScalingHandler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layerCoarsest:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layerFinest:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errorGoal:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MultiScaleSetupBarycenterContainer:</span> <span class="pre">MultiScaleOT.TMultiScaleSetupBarycenterContainer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg:</span> <span class="pre">MultiScaleOT.TSinkhornSolverParameters</span> <span class="pre">=</span> <span class="pre">&lt;MultiScaleOT.TSinkhornSolverParameters</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7aa40bf8aff0&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter.findKernelLine">
-<code class="sig-name descname">findKernelLine</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenter</em>, <em class="sig-param">nMarginal: int</em>, <em class="sig-param">layerFinest: int</em>, <em class="sig-param">a: int</em>, <em class="sig-param">mode: int</em>, <em class="sig-param">slack: float</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.findKernelLine" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter.findKernelLine">
+<span class="sig-name descname"><span class="pre">findKernelLine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="MultiScaleOT.TSinkhornSolverBarycenter"><span class="pre">MultiScaleOT.TSinkhornSolverBarycenter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nMarginal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layerFinest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slack</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.findKernelLine" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nMarginal</strong> – index of reference marginal</p></li>
 <li><p><strong>layerFinest</strong> – index of desired layer</p></li>
@@ -269,125 +231,107 @@ Also the setup of such problems is considerably more complex.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter.getCostFunctionProvider">
-<code class="sig-name descname">getCostFunctionProvider</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenter</em>, <em class="sig-param">arg0: int</em><span class="sig-paren">)</span> &#x2192; MultiScaleOT.THierarchicalCostFunctionProvider<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getCostFunctionProvider" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter.getCostFunctionProvider">
+<span class="sig-name descname"><span class="pre">getCostFunctionProvider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="MultiScaleOT.TSinkhornSolverBarycenter"><span class="pre">MultiScaleOT.TSinkhornSolverBarycenter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="reference_solver_aux.html#MultiScaleOT.THierarchicalCostFunctionProvider" title="MultiScaleOT.THierarchicalCostFunctionProvider"><span class="pre">MultiScaleOT.THierarchicalCostFunctionProvider</span></a></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getCostFunctionProvider" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter.getKernel">
-<code class="sig-name descname">getKernel</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenter</em>, <em class="sig-param">arg0: int</em><span class="sig-paren">)</span> &#x2192; MultiScaleOT.TKernelMatrix<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernel" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter.getKernel">
+<span class="sig-name descname"><span class="pre">getKernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="MultiScaleOT.TSinkhornSolverBarycenter"><span class="pre">MultiScaleOT.TSinkhornSolverBarycenter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">MultiScaleOT.TKernelMatrix</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernel" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter.getKernelCSRData">
-<code class="sig-name descname">getKernelCSRData</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenter</em>, <em class="sig-param">arg0: int</em><span class="sig-paren">)</span> &#x2192; MultiScaleOT.TSparseCSRContainer<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernelCSRData" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter.getKernelCSRData">
+<span class="sig-name descname"><span class="pre">getKernelCSRData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="MultiScaleOT.TSinkhornSolverBarycenter"><span class="pre">MultiScaleOT.TSinkhornSolverBarycenter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="reference_periphery.html#MultiScaleOT.TSparseCSRContainer" title="MultiScaleOT.TSparseCSRContainer"><span class="pre">MultiScaleOT.TSparseCSRContainer</span></a></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernelCSRData" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter.getKernelCSRDataTuple">
-<code class="sig-name descname">getKernelCSRDataTuple</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenter</em>, <em class="sig-param">arg0: int</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernelCSRDataTuple" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter.getKernelCSRDataTuple">
+<span class="sig-name descname"><span class="pre">getKernelCSRDataTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="MultiScaleOT.TSinkhornSolverBarycenter"><span class="pre">MultiScaleOT.TSinkhornSolverBarycenter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernelCSRDataTuple" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter.getKernelPosData">
-<code class="sig-name descname">getKernelPosData</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenter</em>, <em class="sig-param">arg0: int</em><span class="sig-paren">)</span> &#x2192; MultiScaleOT.TSparsePosContainer<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernelPosData" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter.getKernelPosData">
+<span class="sig-name descname"><span class="pre">getKernelPosData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="MultiScaleOT.TSinkhornSolverBarycenter"><span class="pre">MultiScaleOT.TSinkhornSolverBarycenter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="reference_periphery.html#MultiScaleOT.TSparsePosContainer" title="MultiScaleOT.TSparsePosContainer"><span class="pre">MultiScaleOT.TSparsePosContainer</span></a></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernelPosData" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter.getKernelPosDataTuple">
-<code class="sig-name descname">getKernelPosDataTuple</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenter</em>, <em class="sig-param">arg0: int</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernelPosDataTuple" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter.getKernelPosDataTuple">
+<span class="sig-name descname"><span class="pre">getKernelPosDataTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="MultiScaleOT.TSinkhornSolverBarycenter"><span class="pre">MultiScaleOT.TSinkhornSolverBarycenter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getKernelPosDataTuple" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter.getMarginalX">
-<code class="sig-name descname">getMarginalX</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenter</em>, <em class="sig-param">arg0: int</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[numpy.float64]<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getMarginalX" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter.getMarginalX">
+<span class="sig-name descname"><span class="pre">getMarginalX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="MultiScaleOT.TSinkhornSolverBarycenter"><span class="pre">MultiScaleOT.TSinkhornSolverBarycenter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getMarginalX" title="Link to this definition"></a></dt>
 <dd><p>Return 1st marginal of current coupling between nMarginal-th reference measure and current barycenter candidate.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter.getMarginalY">
-<code class="sig-name descname">getMarginalY</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenter</em>, <em class="sig-param">arg0: int</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[numpy.float64]<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getMarginalY" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter.getMarginalY">
+<span class="sig-name descname"><span class="pre">getMarginalY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="MultiScaleOT.TSinkhornSolverBarycenter"><span class="pre">MultiScaleOT.TSinkhornSolverBarycenter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getMarginalY" title="Link to this definition"></a></dt>
 <dd><p>Return 2nd marginal of current coupling between nMarginal-th reference measure and current barycenter candidate.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter.getU">
-<code class="sig-name descname">getU</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenter</em>, <em class="sig-param">arg0: int</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[numpy.float64]<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getU" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter.getU">
+<span class="sig-name descname"><span class="pre">getU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="MultiScaleOT.TSinkhornSolverBarycenter"><span class="pre">MultiScaleOT.TSinkhornSolverBarycenter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getU" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenter.getV">
-<code class="sig-name descname">getV</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenter</em>, <em class="sig-param">arg0: int</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[numpy.float64]<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getV" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenter.getV">
+<span class="sig-name descname"><span class="pre">getV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenter" title="MultiScaleOT.TSinkhornSolverBarycenter"><span class="pre">MultiScaleOT.TSinkhornSolverBarycenter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenter.getV" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenterKLMarginals">
-<em class="property">class </em><code class="sig-prename descclassname">MultiScaleOT.</code><code class="sig-name descname">TSinkhornSolverBarycenterKLMarginals</code><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenterKLMarginals" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenterKLMarginals">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MultiScaleOT.</span></span><span class="sig-name descname"><span class="pre">TSinkhornSolverBarycenterKLMarginals</span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenterKLMarginals" title="Link to this definition"></a></dt>
 <dd><p>Solver for optimal transport barycenter with KL soft marginals.</p>
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenterKLMarginals.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenterKLMarginals</em>, <em class="sig-param">epsScalingHandler: MultiScaleOT.TEpsScalingHandler</em>, <em class="sig-param">layerCoarsest: int</em>, <em class="sig-param">layerFinest: int</em>, <em class="sig-param">errorGoal: float</em>, <em class="sig-param">MultiScaleSetupBarycenterContainer: MultiScaleOT.TMultiScaleSetupBarycenterContainer</em>, <em class="sig-param">kappa: float</em>, <em class="sig-param">cfg: MultiScaleOT.TSinkhornSolverParameters = &lt;MultiScaleOT.TSinkhornSolverParameters object at 0x7fbef12da2b0&gt;</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenterKLMarginals.__init__" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenterKLMarginals.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">MultiScaleOT.TSinkhornSolverBarycenterKLMarginals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsScalingHandler:</span> <span class="pre">MultiScaleOT.TEpsScalingHandler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layerCoarsest:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layerFinest:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errorGoal:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MultiScaleSetupBarycenterContainer:</span> <span class="pre">MultiScaleOT.TMultiScaleSetupBarycenterContainer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg:</span> <span class="pre">MultiScaleOT.TSinkhornSolverParameters</span> <span class="pre">=</span> <span class="pre">&lt;MultiScaleOT.TSinkhornSolverParameters</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7aa42075f970&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenterKLMarginals.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBarycenterKLMarginals.getScorePrimal">
-<code class="sig-name descname">getScorePrimal</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBarycenterKLMarginals</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenterKLMarginals.getScorePrimal" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBarycenterKLMarginals.getScorePrimal">
+<span class="sig-name descname"><span class="pre">getScorePrimal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBarycenterKLMarginals" title="MultiScaleOT.TSinkhornSolverBarycenterKLMarginals"><span class="pre">MultiScaleOT.TSinkhornSolverBarycenterKLMarginals</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBarycenterKLMarginals.getScorePrimal" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="reference_periphery.html" class="btn btn-neutral float-right" title="Periphery functions and classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="reference_solver_unbalanced.html" class="btn btn-neutral float-left" title="Sinkorn solver (unbalanced)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="reference_solver_unbalanced.html" class="btn btn-neutral float-left" title="Sinkorn solver (unbalanced)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="reference_periphery.html" class="btn btn-neutral float-right" title="Periphery functions and classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, Bernhard Schmitzer
-
-    </p>
+    <p>&#169; Copyright 2020, Bernhard Schmitzer.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

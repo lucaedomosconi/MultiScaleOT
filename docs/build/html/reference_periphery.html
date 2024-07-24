@@ -1,86 +1,53 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Periphery functions and classes &mdash; MultiScaleOT 0.3.0 documentation</title>
-  
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+      <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=e259d695"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Barycenters" href="reference_solver_barycenter.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="index.html" class="icon icon-home"> MultiScaleOT
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            MultiScaleOT
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
@@ -93,129 +60,100 @@
 <li class="toctree-l2"><a class="reference internal" href="reference_solver_unbalanced.html">Sinkorn solver (unbalanced)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_solver_barycenter.html">Barycenters</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Periphery functions and classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#data-structures-for-couplings-and-weighted-point-clouds">Data structures for couplings and weighted point clouds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#displacement-interpolation">Displacement interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-structures-for-couplings-and-weighted-point-clouds">Data structures for couplings and weighted point clouds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSparseCSRContainer"><code class="docutils literal notranslate"><span class="pre">TSparseCSRContainer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSparsePosContainer"><code class="docutils literal notranslate"><span class="pre">TSparsePosContainer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TParticleContainer"><code class="docutils literal notranslate"><span class="pre">TParticleContainer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#displacement-interpolation">Displacement interpolation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.interpolateEuclidean"><code class="docutils literal notranslate"><span class="pre">interpolateEuclidean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.interpolateEuclideanHK"><code class="docutils literal notranslate"><span class="pre">interpolateEuclideanHK()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.projectInterpolation"><code class="docutils literal notranslate"><span class="pre">projectInterpolation()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">MultiScaleOT</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="reference.html">Module reference</a> &raquo;</li>
-        
-      <li>Periphery functions and classes</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Module reference</a></li>
+      <li class="breadcrumb-item active">Periphery functions and classes</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/reference_periphery.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="periphery-functions-and-classes">
-<h1>Periphery functions and classes<a class="headerlink" href="#periphery-functions-and-classes" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="periphery-functions-and-classes">
+<h1>Periphery functions and classes<a class="headerlink" href="#periphery-functions-and-classes" title="Link to this heading"></a></h1>
 <p>Some functions that can be used, for instance, for post-processing of optimal solutions. This includes numerical approximation of the displacement interpolation.</p>
-<div class="section" id="data-structures-for-couplings-and-weighted-point-clouds">
-<h2>Data structures for couplings and weighted point clouds<a class="headerlink" href="#data-structures-for-couplings-and-weighted-point-clouds" title="Permalink to this headline">¶</a></h2>
+<section id="data-structures-for-couplings-and-weighted-point-clouds">
+<h2>Data structures for couplings and weighted point clouds<a class="headerlink" href="#data-structures-for-couplings-and-weighted-point-clouds" title="Link to this heading"></a></h2>
 <p>First two sparse data structures for storing kernel / coupling matrix information. They are implementations of the scipy.sparse.csr_matrix and coo_matrix formats.
 Coupling information in these data structures can usually be obtained from a Sinkhorn solver object after solving by calling the appropriate method.</p>
-<dl class="class">
-<dt id="MultiScaleOT.TSparseCSRContainer">
-<em class="property">class </em><code class="sig-prename descclassname">MultiScaleOT.</code><code class="sig-name descname">TSparseCSRContainer</code><a class="headerlink" href="#MultiScaleOT.TSparseCSRContainer" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="MultiScaleOT.TSparseCSRContainer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MultiScaleOT.</span></span><span class="sig-name descname"><span class="pre">TSparseCSRContainer</span></span><a class="headerlink" href="#MultiScaleOT.TSparseCSRContainer" title="Link to this definition"></a></dt>
 <dd><p>Sparse container for coupling data, using the scipy.sparse.csr_matrix format.</p>
-<dl class="method">
-<dt id="MultiScaleOT.TSparseCSRContainer.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSparseCSRContainer, data: numpy.ndarray[numpy.float64], indices: numpy.ndarray[numpy.int32], indptr: numpy.ndarray[numpy.int32], xres: int, yres: int</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.TSparseCSRContainer.__init__" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSparseCSRContainer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSparseCSRContainer" title="MultiScaleOT.TSparseCSRContainer"><span class="pre">MultiScaleOT.TSparseCSRContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int32</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indptr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int32</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xres</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yres</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TSparseCSRContainer.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSparseCSRContainer.getDataTuple">
-<code class="sig-name descname">getDataTuple</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSparseCSRContainer</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#MultiScaleOT.TSparseCSRContainer.getDataTuple" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSparseCSRContainer.getDataTuple">
+<span class="sig-name descname"><span class="pre">getDataTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSparseCSRContainer" title="MultiScaleOT.TSparseCSRContainer"><span class="pre">MultiScaleOT.TSparseCSRContainer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#MultiScaleOT.TSparseCSRContainer.getDataTuple" title="Link to this definition"></a></dt>
 <dd><p>Return list of non-zero entries, column indices, and row separation indices.</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="MultiScaleOT.TSparsePosContainer">
-<em class="property">class </em><code class="sig-prename descclassname">MultiScaleOT.</code><code class="sig-name descname">TSparsePosContainer</code><a class="headerlink" href="#MultiScaleOT.TSparsePosContainer" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="MultiScaleOT.TSparsePosContainer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MultiScaleOT.</span></span><span class="sig-name descname"><span class="pre">TSparsePosContainer</span></span><a class="headerlink" href="#MultiScaleOT.TSparsePosContainer" title="Link to this definition"></a></dt>
 <dd><p>Sparse container for coupling data, using the scipy.sparse.coo_matrix format.</p>
-<dl class="method">
-<dt id="MultiScaleOT.TSparsePosContainer.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSparsePosContainer, mass: numpy.ndarray[numpy.float64], posX: numpy.ndarray[numpy.int32], posY: numpy.ndarray[numpy.int32], xres: int, yres: int</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.TSparsePosContainer.__init__" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSparsePosContainer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSparsePosContainer" title="MultiScaleOT.TSparsePosContainer"><span class="pre">MultiScaleOT.TSparsePosContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">posX</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int32</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">posY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int32</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xres</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yres</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TSparsePosContainer.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSparsePosContainer.getDataTuple">
-<code class="sig-name descname">getDataTuple</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSparsePosContainer</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#MultiScaleOT.TSparsePosContainer.getDataTuple" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSparsePosContainer.getDataTuple">
+<span class="sig-name descname"><span class="pre">getDataTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSparsePosContainer" title="MultiScaleOT.TSparsePosContainer"><span class="pre">MultiScaleOT.TSparsePosContainer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#MultiScaleOT.TSparsePosContainer.getDataTuple" title="Link to this definition"></a></dt>
 <dd><p>Return list of non-zero values, row and column indices.</p>
 </dd></dl>
 
 </dd></dl>
 
 <p>The next data structure is for a list of particles. For example, such objects are generated by the displacement interpolation methods from coupling data objects.</p>
-<dl class="class">
-<dt id="MultiScaleOT.TParticleContainer">
-<em class="property">class </em><code class="sig-prename descclassname">MultiScaleOT.</code><code class="sig-name descname">TParticleContainer</code><a class="headerlink" href="#MultiScaleOT.TParticleContainer" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="MultiScaleOT.TParticleContainer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MultiScaleOT.</span></span><span class="sig-name descname"><span class="pre">TParticleContainer</span></span><a class="headerlink" href="#MultiScaleOT.TParticleContainer" title="Link to this definition"></a></dt>
 <dd><p>Container for list of mass particles, contains an array of masses and an array for locations.</p>
-<dl class="method">
-<dt id="MultiScaleOT.TParticleContainer.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TParticleContainer, mass: numpy.ndarray[numpy.float64], pos: numpy.ndarray[numpy.float64]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.TParticleContainer.__init__" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TParticleContainer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TParticleContainer" title="MultiScaleOT.TParticleContainer"><span class="pre">MultiScaleOT.TParticleContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TParticleContainer.__init__" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mu</strong> – 1d double array of particle masses</p></li>
 <li><p><strong>pos</strong> – 2d double array of particle locations</p></li>
@@ -224,23 +162,23 @@ Coupling information in these data structures can usually be obtained from a Sin
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TParticleContainer.getDataTuple">
-<code class="sig-name descname">getDataTuple</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TParticleContainer</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#MultiScaleOT.TParticleContainer.getDataTuple" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TParticleContainer.getDataTuple">
+<span class="sig-name descname"><span class="pre">getDataTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TParticleContainer" title="MultiScaleOT.TParticleContainer"><span class="pre">MultiScaleOT.TParticleContainer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#MultiScaleOT.TParticleContainer.getDataTuple" title="Link to this definition"></a></dt>
 <dd><p>Return list of masses and positions.</p>
 </dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="displacement-interpolation">
-<h2>Displacement interpolation<a class="headerlink" href="#displacement-interpolation" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="MultiScaleOT.interpolateEuclidean">
-<code class="sig-prename descclassname">MultiScaleOT.</code><code class="sig-name descname">interpolateEuclidean</code><span class="sig-paren">(</span><em class="sig-param">couplingData: MultiScaleOT.TSparsePosContainer, posX: numpy.ndarray[numpy.float64], posY: numpy.ndarray[numpy.float64], t: float</em><span class="sig-paren">)</span> &#x2192; MultiScaleOT.TParticleContainer<a class="headerlink" href="#MultiScaleOT.interpolateEuclidean" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="displacement-interpolation">
+<h2>Displacement interpolation<a class="headerlink" href="#displacement-interpolation" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="MultiScaleOT.interpolateEuclidean">
+<span class="sig-prename descclassname"><span class="pre">MultiScaleOT.</span></span><span class="sig-name descname"><span class="pre">interpolateEuclidean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">couplingData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSparsePosContainer" title="MultiScaleOT.TSparsePosContainer"><span class="pre">MultiScaleOT.TSparsePosContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">posX</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">posY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#MultiScaleOT.TParticleContainer" title="MultiScaleOT.TParticleContainer"><span class="pre">MultiScaleOT.TParticleContainer</span></a></span></span><a class="headerlink" href="#MultiScaleOT.interpolateEuclidean" title="Link to this definition"></a></dt>
 <dd><p>Compute displacement interpolation for Wasserstein-p distance in Euclidean space.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>couplingData</strong> – TSparsePosContainer containing non-zero entries of coupling in sparse POS format</p></li>
 <li><p><strong>posX</strong> – 2d numpy.float64 array containing positions of first marginal points</p></li>
@@ -251,12 +189,12 @@ Coupling information in these data structures can usually be obtained from a Sin
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="MultiScaleOT.interpolateEuclideanHK">
-<code class="sig-prename descclassname">MultiScaleOT.</code><code class="sig-name descname">interpolateEuclideanHK</code><span class="sig-paren">(</span><em class="sig-param">couplingData: MultiScaleOT.TSparsePosContainer, muXEff: numpy.ndarray[numpy.float64], muYEff: numpy.ndarray[numpy.float64], muX: numpy.ndarray[numpy.float64], muY: numpy.ndarray[numpy.float64], posX: numpy.ndarray[numpy.float64], posY: numpy.ndarray[numpy.float64], t: float, HKscale: float</em><span class="sig-paren">)</span> &#x2192; MultiScaleOT.TParticleContainer<a class="headerlink" href="#MultiScaleOT.interpolateEuclideanHK" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="MultiScaleOT.interpolateEuclideanHK">
+<span class="sig-prename descclassname"><span class="pre">MultiScaleOT.</span></span><span class="sig-name descname"><span class="pre">interpolateEuclideanHK</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">couplingData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSparsePosContainer" title="MultiScaleOT.TSparsePosContainer"><span class="pre">MultiScaleOT.TSparsePosContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">muXEff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">muYEff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">muX</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">muY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">posX</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">posY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HKscale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#MultiScaleOT.TParticleContainer" title="MultiScaleOT.TParticleContainer"><span class="pre">MultiScaleOT.TParticleContainer</span></a></span></span><a class="headerlink" href="#MultiScaleOT.interpolateEuclideanHK" title="Link to this definition"></a></dt>
 <dd><p>Compute displacement interpolation for Hellinger–Kantorovich distance in Euclidean space.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>couplingData</strong> – TSparsePosContainer containing non-zero entries of coupling in sparse POS format</p></li>
 <li><p><strong>muXEff</strong> – first marginal of coupling (which can be different from input measure on first marginal)</p></li>
@@ -272,12 +210,12 @@ Coupling information in these data structures can usually be obtained from a Sin
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="MultiScaleOT.projectInterpolation">
-<code class="sig-prename descclassname">MultiScaleOT.</code><code class="sig-name descname">projectInterpolation</code><span class="sig-paren">(</span><em class="sig-param">particles: MultiScaleOT.TParticleContainer, img: numpy.ndarray[numpy.float64]</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.projectInterpolation" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="MultiScaleOT.projectInterpolation">
+<span class="sig-prename descclassname"><span class="pre">MultiScaleOT.</span></span><span class="sig-name descname"><span class="pre">projectInterpolation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">particles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TParticleContainer" title="MultiScaleOT.TParticleContainer"><span class="pre">MultiScaleOT.TParticleContainer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.projectInterpolation" title="Link to this definition"></a></dt>
 <dd><p>Projects a TParticleContainer object (usually storing a displacement interpolation) to a grid via bi-linear interpolation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>particles</strong> – TParticleContainer storing positions and locations of a list of particles in d dimensions</p></li>
 <li><p><strong>img</strong> – d-dimensional numpy.float64 array to which the particles should be rasterized</p></li>
@@ -287,54 +225,37 @@ Coupling information in these data structures can usually be obtained from a Sin
 <p>The mass of each particle is split to the nearest pixels of img, weighted by the relative position along each axis.</p>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="reference_solver_barycenter.html" class="btn btn-neutral float-left" title="Barycenters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="reference_solver_barycenter.html" class="btn btn-neutral float-left" title="Barycenters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, Bernhard Schmitzer
-
-    </p>
+    <p>&#169; Copyright 2020, Bernhard Schmitzer.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

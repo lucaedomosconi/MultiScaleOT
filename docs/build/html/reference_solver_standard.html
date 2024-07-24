@@ -1,87 +1,54 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sinkorn solver (standard) &mdash; MultiScaleOT 0.3.0 documentation</title>
-  
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+      <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=e259d695"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Sinkorn solver (unbalanced)" href="reference_solver_unbalanced.html" />
     <link rel="prev" title="Auxillary objects for Sinkhorn solvers" href="reference_solver_aux.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="index.html" class="icon icon-home"> MultiScaleOT
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            MultiScaleOT
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
@@ -90,7 +57,50 @@
 <li class="toctree-l1 current"><a class="reference internal" href="reference.html">Module reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="reference_multiscale.html">Multiscale representation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_solver_aux.html">Auxillary objects for Sinkhorn solvers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Sinkorn solver (standard)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sinkorn solver (standard)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.absorb"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.absorb()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.changeEps"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.changeEps()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.changeLayer"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.changeLayer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.checkAbsorb"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.checkAbsorb()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.errorGoal"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.errorGoal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.generateKernel"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.generateKernel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.getEps"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.getEps()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.getError"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.getError()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.getLayer"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.getLayer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.initialize"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.initialize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.iterate"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.iterate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.kernelValid"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.kernelValid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.refineDuals"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.refineDuals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.solve"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.solve()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.solveLayer"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.solveLayer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase.solveSingle"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverBase.solveSingle()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.__init__"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.findKernelLine"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.findKernelLine()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.getKernel"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.getKernel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelCSRData"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.getKernelCSRData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelCSRDataTuple"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.getKernelCSRDataTuple()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelEntryCount"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.getKernelEntryCount()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelPosData"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.getKernelPosData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelPosDataTuple"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.getKernelPosDataTuple()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.getMarginalX"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.getMarginalX()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.getMarginalY"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.getMarginalY()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.getScorePrimalUnreg"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.getScorePrimalUnreg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.getScoreTransportCost"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.getScoreTransportCost()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.getU"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.getU()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.getV"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.getV()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.setFixDuals"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.setFixDuals()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.setSafeCTransform"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.setSafeCTransform()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.setSafeMode"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.setSafeMode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.setU"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.setU()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard.setV"><code class="docutils literal notranslate"><span class="pre">TSinkhornSolverStandard.setV()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="reference_solver_unbalanced.html">Sinkorn solver (unbalanced)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_solver_barycenter.html">Barycenters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_periphery.html">Periphery functions and classes</a></li>
@@ -98,104 +108,65 @@
 </li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">MultiScaleOT</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="reference.html">Module reference</a> &raquo;</li>
-        
-      <li>Sinkorn solver (standard)</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="reference.html">Module reference</a></li>
+      <li class="breadcrumb-item active">Sinkorn solver (standard)</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/reference_solver_standard.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="sinkorn-solver-standard">
-<h1>Sinkorn solver (standard)<a class="headerlink" href="#sinkorn-solver-standard" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="MultiScaleOT.TSinkhornSolverBase">
-<em class="property">class </em><code class="sig-prename descclassname">MultiScaleOT.</code><code class="sig-name descname">TSinkhornSolverBase</code><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase" title="Permalink to this definition">¶</a></dt>
+             
+  <section id="sinkorn-solver-standard">
+<h1>Sinkorn solver (standard)<a class="headerlink" href="#sinkorn-solver-standard" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MultiScaleOT.</span></span><span class="sig-name descname"><span class="pre">TSinkhornSolverBase</span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase" title="Link to this definition"></a></dt>
 <dd><p>This is an abstract base class for the specialized SinkhornSolver classes.
 It does not expose a constructor to the user but its methods are inherited by all specialized Sinkhorn solver classes.</p>
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.absorb">
-<code class="sig-name descname">absorb</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.absorb" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.absorb">
+<span class="sig-name descname"><span class="pre">absorb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.absorb" title="Link to this definition"></a></dt>
 <dd><p>Absorb current values of scaling factors into dual variables and reset scaling factors to 1. After calling this, one should usually set kernelValid to false.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.changeEps">
-<code class="sig-name descname">changeEps</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em>, <em class="sig-param">newEps: float</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.changeEps" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.changeEps">
+<span class="sig-name descname"><span class="pre">changeEps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">newEps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.changeEps" title="Link to this definition"></a></dt>
 <dd><p>Set current epsilon. Experimental.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.changeLayer">
-<code class="sig-name descname">changeLayer</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em>, <em class="sig-param">newLayer: int</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.changeLayer" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.changeLayer">
+<span class="sig-name descname"><span class="pre">changeLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">newLayer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.changeLayer" title="Link to this definition"></a></dt>
 <dd><p>Set current layer. Experimental.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.checkAbsorb">
-<code class="sig-name descname">checkAbsorb</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em>, <em class="sig-param">maxValue: float</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.checkAbsorb" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.checkAbsorb">
+<span class="sig-name descname"><span class="pre">checkAbsorb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxValue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.checkAbsorb" title="Link to this definition"></a></dt>
 <dd><p>Tests whether values of the scaling factors exceed maxValue. If so, an absorption and subsequent kernel computation are recommended.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>maxValue</strong> – threshold for scaling factors</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p>1 if maxValue is exceeded</p></li>
 <li><p>0 otherwise</p></li>
@@ -206,90 +177,90 @@ It does not expose a constructor to the user but its methods are inherited by al
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.errorGoal">
-<em class="property">property </em><code class="sig-name descname">errorGoal</code><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.errorGoal" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.errorGoal">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">errorGoal</span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.errorGoal" title="Link to this definition"></a></dt>
 <dd><p>Double. Target accuracy for stopping the Sinkhorn algorithm.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.generateKernel">
-<code class="sig-name descname">generateKernel</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.generateKernel" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.generateKernel">
+<span class="sig-name descname"><span class="pre">generateKernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.generateKernel" title="Link to this definition"></a></dt>
 <dd><p>Recompute truncated kernel matrix based on current dual variables.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.getEps">
-<code class="sig-name descname">getEps</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.getEps" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.getEps">
+<span class="sig-name descname"><span class="pre">getEps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.getEps" title="Link to this definition"></a></dt>
 <dd><p>Return current value of epsilon.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.getError">
-<code class="sig-name descname">getError</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.getError" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.getError">
+<span class="sig-name descname"><span class="pre">getError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.getError" title="Link to this definition"></a></dt>
 <dd><p>Return current error (used as stopping criterion).</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.getLayer">
-<code class="sig-name descname">getLayer</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.getLayer" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.getLayer">
+<span class="sig-name descname"><span class="pre">getLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.getLayer" title="Link to this definition"></a></dt>
 <dd><p>Return current layer index.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.initialize">
-<code class="sig-name descname">initialize</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.initialize" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.initialize" title="Link to this definition"></a></dt>
 <dd><p>Must be called after constructor before any other methods.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.iterate">
-<code class="sig-name descname">iterate</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em>, <em class="sig-param">n: int</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.iterate" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.iterate">
+<span class="sig-name descname"><span class="pre">iterate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.iterate" title="Link to this definition"></a></dt>
 <dd><p>Perform n iterations.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.kernelValid">
-<em class="property">property </em><code class="sig-name descname">kernelValid</code><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.kernelValid" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.kernelValid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kernelValid</span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.kernelValid" title="Link to this definition"></a></dt>
 <dd><p>Boolean. Is the currently stored kernel object valid (e.g. was epsilon changed or have absorbed dual variables changed since last computation).
 Experimental. Only experts should modify this.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.refineDuals">
-<code class="sig-name descname">refineDuals</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em>, <em class="sig-param">newLayer: int</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.refineDuals" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.refineDuals">
+<span class="sig-name descname"><span class="pre">refineDuals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">newLayer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.refineDuals" title="Link to this definition"></a></dt>
 <dd><p>Refines duals from coarse layer &lt;newLayer-1&gt; to &lt;newLayer&gt;. Experimental.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.solve">
-<code class="sig-name descname">solve</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.solve" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.solve" title="Link to this definition"></a></dt>
 <dd><p>Run the full main algorithm to solve the problem.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.solveLayer">
-<code class="sig-name descname">solveLayer</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.solveLayer" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.solveLayer">
+<span class="sig-name descname"><span class="pre">solveLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.solveLayer" title="Link to this definition"></a></dt>
 <dd><p>Solve over epsilon list at current layer. Experimental.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverBase.solveSingle">
-<code class="sig-name descname">solveSingle</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverBase</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.solveSingle" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverBase.solveSingle">
+<span class="sig-name descname"><span class="pre">solveSingle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverBase" title="MultiScaleOT.TSinkhornSolverBase"><span class="pre">MultiScaleOT.TSinkhornSolverBase</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverBase.solveSingle" title="Link to this definition"></a></dt>
 <dd><p>Solve for current epsilon at current layer. Experimental.</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="MultiScaleOT.TSinkhornSolverStandard">
-<em class="property">class </em><code class="sig-prename descclassname">MultiScaleOT.</code><code class="sig-name descname">TSinkhornSolverStandard</code><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MultiScaleOT.</span></span><span class="sig-name descname"><span class="pre">TSinkhornSolverStandard</span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard" title="Link to this definition"></a></dt>
 <dd><p>Solver class for standard entropic optimal transport problems with fixed marginal constraints.</p>
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverStandard.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverStandard</em>, <em class="sig-param">epsScalingHandler: MultiScaleOT.TEpsScalingHandler</em>, <em class="sig-param">layerCoarsest: int</em>, <em class="sig-param">layerFinest: int</em>, <em class="sig-param">errorGoal: float</em>, <em class="sig-param">MultiScaleSetupX: MultiScaleOT.TMultiScaleSetup</em>, <em class="sig-param">MultiScaleSetupY: MultiScaleOT.TMultiScaleSetup</em>, <em class="sig-param">costProvider: MultiScaleOT.THierarchicalCostFunctionProvider</em>, <em class="sig-param">cfg: MultiScaleOT.TSinkhornSolverParameters = &lt;MultiScaleOT.TSinkhornSolverParameters object at 0x7fbef12d4b70&gt;</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.__init__" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self:</span> <span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsScalingHandler:</span> <span class="pre">MultiScaleOT.TEpsScalingHandler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layerCoarsest:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layerFinest:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errorGoal:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MultiScaleSetupX:</span> <span class="pre">MultiScaleOT.TMultiScaleSetup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MultiScaleSetupY:</span> <span class="pre">MultiScaleOT.TMultiScaleSetup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">costProvider:</span> <span class="pre">MultiScaleOT.THierarchicalCostFunctionProvider</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg:</span> <span class="pre">MultiScaleOT.TSinkhornSolverParameters</span> <span class="pre">=</span> <span class="pre">&lt;MultiScaleOT.TSinkhornSolverParameters</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7aa40c5ff7b0&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.__init__" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>epsScalingHandler</strong> – instance of TEpsScalingHandler to control epsilon schedule</p></li>
 <li><p><strong>layerCoarsest</strong> – coarsest layer at which to start solving</p></li>
@@ -304,11 +275,11 @@ Experimental. Only experts should modify this.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverStandard.findKernelLine">
-<code class="sig-name descname">findKernelLine</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverStandard</em>, <em class="sig-param">layerFinest: int</em>, <em class="sig-param">a: int</em>, <em class="sig-param">mode: int</em>, <em class="sig-param">slack: float</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.findKernelLine" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.findKernelLine">
+<span class="sig-name descname"><span class="pre">findKernelLine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">layerFinest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slack</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.findKernelLine" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>layerFinest</strong> – index of desired layer</p></li>
 <li><p><strong>a</strong> – index of kernel line to be determined</p></li>
@@ -316,123 +287,140 @@ Experimental. Only experts should modify this.</p>
 <li><p><strong>slack</strong> – threshold below maximal value up to which entries are included</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A tuple of an int32 array and a double array, containing indices and effective cost values of dominating kernel entries.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverStandard.getKernel">
-<code class="sig-name descname">getKernel</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverStandard</em><span class="sig-paren">)</span> &#x2192; MultiScaleOT.TKernelMatrix<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getKernel" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.getKernel">
+<span class="sig-name descname"><span class="pre">getKernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">MultiScaleOT.TKernelMatrix</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getKernel" title="Link to this definition"></a></dt>
 <dd><p>Return a TKernelMatrix object holding the current stabilized kernel.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverStandard.getKernelCSRData">
-<code class="sig-name descname">getKernelCSRData</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverStandard</em><span class="sig-paren">)</span> &#x2192; MultiScaleOT.TSparseCSRContainer<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelCSRData" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.getKernelCSRData">
+<span class="sig-name descname"><span class="pre">getKernelCSRData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="reference_periphery.html#MultiScaleOT.TSparseCSRContainer" title="MultiScaleOT.TSparseCSRContainer"><span class="pre">MultiScaleOT.TSparseCSRContainer</span></a></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelCSRData" title="Link to this definition"></a></dt>
 <dd><p>Returns a TSparseCSRContainer object containing the non-zero stabilized kernel entries in sparse CSR format.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverStandard.getKernelCSRDataTuple">
-<code class="sig-name descname">getKernelCSRDataTuple</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverStandard</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelCSRDataTuple" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.getKernelCSRDataTuple">
+<span class="sig-name descname"><span class="pre">getKernelCSRDataTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelCSRDataTuple" title="Link to this definition"></a></dt>
 <dd><p>Returns a tuple of numpy arrays (data,indices,indptr) of types (float64,int32,int32) containing the non-zero stabilized kernel entries in sparse CSR format (see scipy.sparse.csr_matrix).</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverStandard.getKernelEntryCount">
-<code class="sig-name descname">getKernelEntryCount</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverStandard</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelEntryCount" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.getKernelEntryCount">
+<span class="sig-name descname"><span class="pre">getKernelEntryCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelEntryCount" title="Link to this definition"></a></dt>
 <dd><p>Returns number of non-zero entries in current stabilized kernel.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverStandard.getKernelPosData">
-<code class="sig-name descname">getKernelPosData</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverStandard</em><span class="sig-paren">)</span> &#x2192; MultiScaleOT.TSparsePosContainer<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelPosData" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.getKernelPosData">
+<span class="sig-name descname"><span class="pre">getKernelPosData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="reference_periphery.html#MultiScaleOT.TSparsePosContainer" title="MultiScaleOT.TSparsePosContainer"><span class="pre">MultiScaleOT.TSparsePosContainer</span></a></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelPosData" title="Link to this definition"></a></dt>
 <dd><p>Returns a TSparsePosContainer object containing the non-zero stabilized kernel entries in sparse POS format.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverStandard.getKernelPosDataTuple">
-<code class="sig-name descname">getKernelPosDataTuple</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverStandard</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelPosDataTuple" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.getKernelPosDataTuple">
+<span class="sig-name descname"><span class="pre">getKernelPosDataTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getKernelPosDataTuple" title="Link to this definition"></a></dt>
 <dd><p>Returns a tuple of numpy arrays (mass,posStart,posEnd) of types (float64,int32,int32) containing the non-zero stabilized kernel entries in sparse POS format (mass values, row indices, column indices, see also scipy.sparse.coo_matrix).</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverStandard.getMarginalX">
-<code class="sig-name descname">getMarginalX</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverStandard</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[numpy.float64]<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getMarginalX" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.getMarginalX">
+<span class="sig-name descname"><span class="pre">getMarginalX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getMarginalX" title="Link to this definition"></a></dt>
 <dd><p>Return 1st marginal of current coupling.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverStandard.getMarginalY">
-<code class="sig-name descname">getMarginalY</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverStandard</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[numpy.float64]<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getMarginalY" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.getMarginalY">
+<span class="sig-name descname"><span class="pre">getMarginalY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getMarginalY" title="Link to this definition"></a></dt>
 <dd><p>Return 1st marginal of current coupling.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverStandard.getScorePrimalUnreg">
-<code class="sig-name descname">getScorePrimalUnreg</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverStandard</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getScorePrimalUnreg" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.getScorePrimalUnreg">
+<span class="sig-name descname"><span class="pre">getScorePrimalUnreg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getScorePrimalUnreg" title="Link to this definition"></a></dt>
 <dd><p>Return current primal cost without the entropy term (only transport term and marginal discrepancies in unbalanced cases).</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="MultiScaleOT.TSinkhornSolverStandard.getScoreTransportCost">
-<code class="sig-name descname">getScoreTransportCost</code><span class="sig-paren">(</span><em class="sig-param">self: MultiScaleOT.TSinkhornSolverStandard</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getScoreTransportCost" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.getScoreTransportCost">
+<span class="sig-name descname"><span class="pre">getScoreTransportCost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getScoreTransportCost" title="Link to this definition"></a></dt>
 <dd><p>Return transport cost of current coupling (i.e. integral of coupling against cost function on product space.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.getU">
+<span class="sig-name descname"><span class="pre">getU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getU" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.getV">
+<span class="sig-name descname"><span class="pre">getV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.getV" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.setFixDuals">
+<span class="sig-name descname"><span class="pre">setFixDuals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.setFixDuals" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.setSafeCTransform">
+<span class="sig-name descname"><span class="pre">setSafeCTransform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.setSafeCTransform" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.setSafeMode">
+<span class="sig-name descname"><span class="pre">setSafeMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.setSafeMode" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.setU">
+<span class="sig-name descname"><span class="pre">setU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.setU" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MultiScaleOT.TSinkhornSolverStandard.setV">
+<span class="sig-name descname"><span class="pre">setV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#MultiScaleOT.TSinkhornSolverStandard" title="MultiScaleOT.TSinkhornSolverStandard"><span class="pre">MultiScaleOT.TSinkhornSolverStandard</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#MultiScaleOT.TSinkhornSolverStandard.setV" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="reference_solver_unbalanced.html" class="btn btn-neutral float-right" title="Sinkorn solver (unbalanced)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="reference_solver_aux.html" class="btn btn-neutral float-left" title="Auxillary objects for Sinkhorn solvers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="reference_solver_aux.html" class="btn btn-neutral float-left" title="Auxillary objects for Sinkhorn solvers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="reference_solver_unbalanced.html" class="btn btn-neutral float-right" title="Sinkorn solver (unbalanced)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2020, Bernhard Schmitzer
-
-    </p>
+    <p>&#169; Copyright 2020, Bernhard Schmitzer.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
